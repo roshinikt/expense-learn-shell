@@ -13,6 +13,7 @@ rm -rf /usr/share/nginx/html/*
 curl -o /tmp/frontend.zip ht//expense-artifacts.s3.amazonaws.com/frontend.zip
 
 echo -e "\e[31 extract frontend application \e[0m"
+
 cd  /usr/share/nginx/html
 unzip /tmp/frontend.zip
 echo -e "\e[31 extract start nginx software \e[0m"
