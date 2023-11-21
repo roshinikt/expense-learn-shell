@@ -16,6 +16,7 @@ echo -e "\e[31 extract frontend application \e[0m"
 
 cd  /usr/share/nginx/html
 unzip /tmp/frontend.zip
+
 echo -e "\e[31 extract start nginx software \e[0m"
 
 systemctl enable nginx
