@@ -2,7 +2,7 @@ echo -e "\e[31 diable  nodejs software \e[0m"
  dnf module disable nodejs -y
 
 
- echo -e "\e[31 enable  nodejs software \e[0m"
+echo -e "\e[31 enable  nodejs software \e[0m"
 dnf module enable nodejs:18 -y
 
 echo -e "\e[31 install nodejs software \e[0m"
