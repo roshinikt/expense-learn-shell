@@ -1,6 +1,7 @@
 
 echo -e "\e[36m install ngnix software \e[0m"
 dnf install nginx -y &>>/temp/expense.log
+echo $?
 
 
 echo -e "\e[36m configure ngnix software \e[0m"
