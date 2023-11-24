@@ -46,6 +46,7 @@ echo $?
 echo -e "\enable backend softwware\e[0m"
 systemctl enable backend
 echo $?
+
 echo -e "\start backend softwware\e[0m"
 systemctl start backend
 echo $?
