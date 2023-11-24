@@ -27,7 +27,7 @@ echo $?
 cd /app
 unzip /tmp/backend.zip
 
-
+echo -e "\directory storage app \e[0m"
 cd /app
 echo -e "\npm package install \e[0m"
 npm install
