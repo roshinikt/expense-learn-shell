@@ -7,6 +7,8 @@ echo $?
 echo -e "\e[36m configure ngnix software \e[0m"
 
 cp expense.conf /etc/nginx/default.d/expense.conf &>>/temp/expense.log
+echo $?
+
 
 echo -e "\e[36m remove old ngnix software \e[0m"
 
