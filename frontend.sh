@@ -1,5 +1,6 @@
 echo -e "\e[31 install ngnix software \e[0m"
 dnf install nginx -y
+echo $?
 
 echo -e "\e[31 configure ngnix software \e[0m"
 
