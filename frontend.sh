@@ -12,6 +12,7 @@ echo $?
 echo -e "\e[31 remove old ngnix software \e[0m"
 
 rm -rf /usr/share/nginx/html/* &>>log_file
+echo $?
 
  echo -e "\e[31 download frontend application \e[0m"
 curl -o /tmp/frontend.zip ht//expense-artifacts.s3.amazonaws.com/frontend.zip &>>log_file
