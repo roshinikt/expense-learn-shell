@@ -1,55 +1,61 @@
-echo -e "\e[31 diable  nodejs software \e[0m"
- dnf module disable nodejs -y
+backend_file=/temp/backend.log
+color="\e[36m"
+
+echo -e "${color} diable  nodejs software \e[0m"
+ dnf module disable nodejs -y &>>backend_file
+ echo $?
 
 
-echo -e "\e[31 enable  nodejs software \e[0m"
-dnf module enable nodejs:18 -y
-
-echo -e "\e[31 install nodejs software \e[0m"
-dnf install nodejs -y
-
-
-echo -e "\e[31 backend storage \e[0m"
-cp backend.service /etc/systemd/system/backend.service
+echo -e "${color} enable  nodejs software \e[0m"
+dnf module enable nodejs:18 -y &>>backend_file
 echo $?
 
-echo -e "\e[31 adding user to expense \e[0m"
-useradd expense
+echo -e "${color} install nodejs software \e[0m"
+dnf install nodejs -y &>>backend_file
 echo $?
 
-echo -e "\e[creating expense directory \e[0m"
-mkdir /app
+
+echo -e "${color} backend storage \e[0m"
+cp backend.service /etc/systemd/system/backend.service &>>backend_file
 echo $?
 
-echo -e "\backend file frontend download\e[0m"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
-echo $?
-cd /app
-unzip /tmp/backend.zip
-
-echo -e "\directory storage app \e[0m"
-cd /app
-
-echo -e "\npm package install \e[0m"
-npm install
+echo -e "${color} adding user to expense \e[0m"
+useradd expense &>>backend_file
 echo $?
 
-echo -e "\install mysql software \e[0m"
-dnf install mysql -y
-echo $?
-mysql -h <mysql-dev.roshinitallam7.online> -uroot -pExpenseApp@1 < /app/schema/backend.sql
-
-
-echo -e "\reload backend softwware\e[0m"
-
-systemctl daemon-reload
-echo $?
-echo -e "\enable backend softwware\e[0m"
-systemctl enable backend
+echo -e "${color}creating expense directory \e[0m"
+mkdir /app &>>backend_file
 echo $?
 
-echo -e "\start backend softwware\e[0m"
-systemctl start backend
+echo -e "${color}backend file frontend download\e[0m"
+curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>backend_file
+cd /app &>>backend_file
+unzip /tmp/backend.zip &>>backend_file
+echo $?
+
+echo -e "${color}directory storage app \e[0m"
+cd /app &>>backend_file
+echo $?
+
+echo -e "${color}npm package install \e[0m"
+npm install &>>backend_file
+echo $?
+
+echo -e "${color}install mysql software \e[0m"
+dnf install mysql -y &>>backend_file
+mysql -h <mysql-dev.roshinitallam7.online> -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>backend_file
+echo $?
+
+echo -e "${color}reload backend softwware\e[0m"
+systemctl daemon-reload &>>backend_file
+echo $?
+
+echo -e "${color}enable backend softwware\e[0m"
+systemctl enable backend &>>backend_file
+echo $?
+
+echo -e "${color}start backend softwware\e[0m"
+systemctl start backend &>>backend_file
 echo $?
 
 
