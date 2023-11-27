@@ -7,7 +7,7 @@ echo -e "${color} diable  nodejs software \e[0m"
    echo success
  else
    echo fail
-  fi
+ fi
 
 
 echo -e "${color} enable  nodejs software \e[0m"
