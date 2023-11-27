@@ -24,7 +24,6 @@ cp backend.service /etc/systemd/system/backend.service &>>backend_file
 echo $?
 
 echo -e "${color} adding user to expense \e[0m"
-if
 useradd expense &>>backend_file
 echo $?
 
