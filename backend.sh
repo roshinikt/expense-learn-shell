@@ -3,7 +3,7 @@ color="\e[36m"
 
 echo -e "${color} diable  nodejs software \e[0m"
  dnf module disable nodejs -y &>>backend_file
- if [ $? -eq 0]; then
+ if [ $? -eq 0 ]; then
    echo success
  else
    echo fail
