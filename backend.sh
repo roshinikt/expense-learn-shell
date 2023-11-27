@@ -3,7 +3,11 @@ color="\e[36m"
 
 echo -e "${color} diable  nodejs software \e[0m"
  dnf module disable nodejs -y &>>backend_file
- echo $?
+ if [ $? -eq 0]; then
+   echo success
+ else
+   echo fail
+  fi
 
 
 echo -e "${color} enable  nodejs software \e[0m"
@@ -20,6 +24,7 @@ cp backend.service /etc/systemd/system/backend.service &>>backend_file
 echo $?
 
 echo -e "${color} adding user to expense \e[0m"
+if
 useradd expense &>>backend_file
 echo $?
 
